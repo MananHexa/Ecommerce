@@ -1,9 +1,14 @@
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { FiShoppingCart, FiUser, FiSearch } from "react-icons/fi";
+import { CartContext } from '../context/CartContext';
 
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
+
+  const { getTotalItems } = useContext(CartContext);
+const totalItems = getTotalItems();
+
 
   useEffect(() => {
     // Enable hover dropdown
@@ -141,11 +146,20 @@ export default function Header() {
             <FiSearch size={20} />
           </button>
 
-          <Link href="/cart" legacyBehavior>
-            <a className="text-dark">
-              <FiShoppingCart size={24} />
-            </a>
-          </Link>
+     <Link href="/cart" legacyBehavior>
+  <a className="text-dark position-relative">
+    <FiShoppingCart size={24} />
+    {totalItems > 0 && (
+      <span
+        className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+        style={{ fontSize: "0.6rem" }}
+      >
+        {totalItems}
+      </span>
+    )}
+  </a>
+</Link>
+
 
           <Link href="/profile" legacyBehavior>
             <a className="text-dark">
