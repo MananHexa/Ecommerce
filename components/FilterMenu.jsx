@@ -1,6 +1,7 @@
 // components/FilterMenu.js
 import { useState } from 'react'
 import { Collapse, Button } from 'react-bootstrap'
+import { FaTshirt, FaPalette, FaRulerCombined, FaDollarSign } from 'react-icons/fa'
 
 export default function FilterMenu() {
   const [open, setOpen] = useState(false)
@@ -8,12 +9,12 @@ export default function FilterMenu() {
   return (
     <>
       {/* For mobile: Toggle Button */}
-      <div className="d-md-none my-3">
+      <div className="d-md-none my-4">
         <Button
           onClick={() => setOpen(!open)}
           aria-controls="filterCollapse"
           aria-expanded={open}
-          className="w-100"
+          className="w-100 fs-5"
         >
           Toggle Filters
         </Button>
@@ -25,8 +26,11 @@ export default function FilterMenu() {
       </div>
 
       {/* For desktop: Sidebar */}
-      <div className="d-none d-md-block p-3 border rounded bg-light" style={{ minWidth: '250px' }}>
-        <h5 className="mb-3">Filters</h5>
+      <div
+        className="d-none d-md-block p-4 border rounded bg-light"
+        style={{ minWidth: '280px', fontSize: '1.05rem', lineHeight: '1.8' }}
+      >
+        <h4 className="mb-4 text-center">Filters</h4>
         <Filters />
       </div>
     </>
@@ -37,26 +41,22 @@ function Filters() {
   return (
     <>
       {/* Categories */}
-      <div className="mb-3">
-        <h6>Category</h6>
-        <div className="form-check">
-          <input className="form-check-input" type="checkbox" id="shirt" />
-          <label className="form-check-label" htmlFor="shirt">Shirt</label>
-        </div>
-        <div className="form-check">
-          <input className="form-check-input" type="checkbox" id="tshirt" />
-          <label className="form-check-label" htmlFor="tshirt">T-shirt</label>
-        </div>
-        <div className="form-check">
-          <input className="form-check-input" type="checkbox" id="jeans" />
-          <label className="form-check-label" htmlFor="jeans">Jeans</label>
-        </div>
+      <div className="mb-4">
+        <h5><FaTshirt className="me-2" />Category</h5>
+           <p className="text-muted small">Choose what type of clothing you prefer.</p>
+        {['Shirt', 'T-shirt', 'Jeans', 'Jacket'].map((item) => (
+          <div className="form-check" key={item}>
+            <input className="form-check-input" type="checkbox" id={item.toLowerCase()} />
+            <label className="form-check-label" htmlFor={item.toLowerCase()}>{item}</label>
+          </div>
+        ))}
       </div>
 
       {/* Color */}
-      <div className="mb-3">
-        <h6>Color</h6>
-        {['Red', 'Blue', 'Green', 'Black'].map((color) => (
+      <div className="mb-4">
+        <h5><FaPalette className="me-2" />Color</h5>
+        <p className="text-muted small">Pick a color that suits your mood.</p>
+        {['Red', 'Blue', 'Green', 'Black', 'White'].map((color) => (
           <div className="form-check" key={color}>
             <input className="form-check-input" type="checkbox" id={color.toLowerCase()} />
             <label className="form-check-label" htmlFor={color.toLowerCase()}>{color}</label>
@@ -65,9 +65,10 @@ function Filters() {
       </div>
 
       {/* Size */}
-      <div className="mb-3">
-        <h6>Size</h6>
-        {['S', 'M', 'L', 'XL'].map((size) => (
+      <div className="mb-4">
+        <h5><FaRulerCombined className="me-2" />Size</h5>
+          <p className="text-muted small">Multiple sizes for every body type.</p>
+        {['XS', 'S', 'M', 'L', 'XL', 'XXL'].map((size) => (
           <div className="form-check form-check-inline" key={size}>
             <input className="form-check-input" type="checkbox" id={`size-${size}`} />
             <label className="form-check-label" htmlFor={`size-${size}`}>{size}</label>
@@ -76,9 +77,9 @@ function Filters() {
       </div>
 
       {/* Price Range */}
-      <div className="mb-3">
-        <h6>Price Range</h6>
-        <div className="d-flex gap-2">
+      <div className="mb-4">
+        <h5><FaDollarSign className="me-2" />Price Range</h5>
+        <div className="d-flex gap-3">
           <input type="number" className="form-control form-control-sm" placeholder="Min" />
           <input type="number" className="form-control form-control-sm" placeholder="Max" />
         </div>

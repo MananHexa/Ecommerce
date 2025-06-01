@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="bg-gray-100 text-gray-700 pt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-   <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-10">
+  <div className="flex-wrap-center">
   {/* SHOP.CO logo section */}
-  <div className="md:col-span-2 order-1 md:order-none text-center md:text-left" style={{display:'flex', flexWrap:'wrap',justifyContent:'center', alignItems:'center', flexDirection:'row-reverse'}}>
+  <div className="md:col-span-2 order-1 md:order-none text-center md:text-left" style={{display:'flex', flexWrap:'wrap',justifyContent:'center', alignItems:'center', flexDirection:'column'}}>
     <h2 className="text-2xl font-bold mb-2">SHOP.CO</h2>
     <p className="text-sm mb-4">
       Fashion that fits your lifestyle. From bold to basics, we bring style to everyone.
@@ -50,20 +50,30 @@ export default function Footer() {
       <li><a href="#">Playlists</a></li>
     </ul>
   </div>
+
+  <div className="order-5 space-x-1" >
+    <h3 className="font-semibold mb-2 space-x-1" style={{textAlign:"center"}} >F A Q</h3>
+    <ul className="space-y-1 text-sm">
+      <li><a href="#">Account</a></li>
+      <li><a href="#">Delivery</a></li>
+      <li><a href="#">Order</a></li>
+      <li><a href="#">Payment</a></li>
+    </ul>
+  </div>
 </div>
 </div>
 
         {/* Newsletter Section */}
-        <div className="bg-black text-white p-6 rounded-lg mb-6 text-center">
+        <div className="bg-black text-white p-6 rounded-lg mb-6 text-center" style={{borderRadius: '2rem'}}>
           <h3 className="text-xl font-bold mb-2">Subscribe to Our Newsletter</h3>
           <p className="text-sm mb-4">Get updates on new arrivals and exclusive offers.</p>
           <form className="flex flex-col sm:flex-row justify-center items-center gap-3">
             <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-2 rounded-md w-full sm:w-64 text-black"
+              className="px-4 py-2 rounded-md w-full sm:w-64 text-black" style={{margin:"1rem", height:"3rem"}}
             />
-            <button className="bg-white text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-200">
+            <button className="bg-white text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-200" style={{height:"3rem"}}>
               Subscribe
             </button>
           </form>

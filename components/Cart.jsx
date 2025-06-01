@@ -1,6 +1,7 @@
 'use client';
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
+import { useRouter } from 'next/navigation';
 
 function Cart() {
   const {
@@ -12,6 +13,12 @@ function Cart() {
     increaseQty,
     decreaseQty,
   } = useContext(CartContext);
+
+  const router = useRouter();
+
+    const handleCheckout = () => {
+    router.push('/payment') // Redirect to payment page
+  }
 
   if (!cart || cart.length === 0) {
     return <h2>Your cart is empty</h2>;
@@ -89,9 +96,9 @@ function Cart() {
   <button className="btn btn-outline-danger w-100 mb-2" onClick={clearCart}>
     Clear Cart
   </button>
-  <button className="btn btn-primary w-100">
-    Checkout
-  </button>
+   <button className="btn btn-primary w-100" onClick={handleCheckout}>
+            Checkout
+          </button>
 </div>
 
       </div>

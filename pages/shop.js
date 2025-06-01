@@ -6,10 +6,10 @@ export default function Shop() {
     return(
         <>
        <Header/>
-       <div className="container my-4 d-flex  flex-md-row gap-4" >
-       <FilterMenu/>
-       <NewArrivals/>
-       </div>
+         <div className="container my-4 d-flex flex-column flex-md-row gap-4" >
+            <FilterMenu style={{position:'relative'}}/>
+            <NewArrivals/>
+              </div>
        <Footer/>
        
        </>
