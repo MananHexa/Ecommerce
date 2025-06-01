@@ -5,9 +5,9 @@ import Header from '../components/Header';
 export default function ProfilePage() {
   const user = {
     name: 'John Doe',
-    email: 'john.doe@example.com',
+    email: 'abcd@example.com',
     phone: '+91 98765 43210',
-    address: '123 Main Street, Mumbai, India',
+    address: '123 Main Street, Ahmedabad, India',
     profilePic: 'https://i.pravatar.cc/150?img=3', // dummy profile image
   };
 
