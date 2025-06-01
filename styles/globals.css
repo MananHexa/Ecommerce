@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+header {
+  background: #0070f3;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  color: #666;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.product-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem;
+  width: 200px;
+  text-align: center;
+}
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 150px;
+  object-fit: cover;
+}
+button {
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #005bb5;
+}
+.cart-list {
+  list-style: none;
+  padding: 0;
+}
+.cart-list li {
+  background: white;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cart-list li > span {
+  flex: 1;
+}
+.cart-list li button {
+  background: #e00;
+  padding: 0.3rem 0.6rem;
+}
+/*  */
+/* Make sure the collapsed navbar container does not block clicks on inner elements */
+.navbar-collapse {
+  pointer-events: auto !important;
+  z-index: 1030; /* Bootstrap dropdown z-index baseline */
+ } 
+
+
+/*  */
+li{
+  list-style: none;
+}
+li a{
+  text-decoration: none;
+  color: inherit;
+}
+.footerimage img{
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: auto;
+  max-width: 100px;
+  border-radius: 8px;
+}
+.carousel-slide {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-slide {
+    height: 40vh;
+  }
+}
+.carousel .control-arrow {
+  width: 100px  ;
+}
+
+.carousel .control-prev.control-arrow::before,
+.carousel .control-next.control-arrow::before {
+  font-size: 30px;                /* Make arrow icon itself larger */
+}
