@@ -26,9 +26,13 @@ Live demo will be available soon on **Vercel**
 
 .
 ├── components # Reusable UI components
+
 ├── context # CartContext using React Context API
+
 ├── pages # All app pages (Home, Cart)
+
 ├── public # Images and static files
+
 └── styles # Custom global styles
 
 
