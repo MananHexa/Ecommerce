@@ -9,8 +9,8 @@ export default function Shop() {
        <div className="container my-4 d-flex flex-column flex-md-row gap-4" >
        <FilterMenu style={{position:'relative'}}/>
        <NewArrivals/>
-       <Footer/>
        </div>
+          <Footer/>
        </>
     )
 }
